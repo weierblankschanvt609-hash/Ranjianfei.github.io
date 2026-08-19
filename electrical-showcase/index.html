@@ -187,6 +187,18 @@ footer p { margin: 0; }
 footer div { display: flex; gap: 24px; }
 footer a { color: var(--green); }
 
+
+.intro-section { padding-bottom: 82px; }
+.intro-card { display: grid; grid-template-columns: minmax(230px, .38fr) 1.62fr; border: 1px solid var(--ink); background: #f8faf5; }
+.intro-meta { min-height: 380px; padding: 32px; display: flex; flex-direction: column; color: var(--white); background: var(--ink); }
+.intro-meta > span, .intro-copy > span { color: var(--green); font: 800 9px/1 Arial, sans-serif; letter-spacing: .15em; }
+.intro-meta strong { margin-top: auto; font-size: 32px; letter-spacing: -.04em; }
+.intro-meta p { margin: 13px 0 0; color: #91a49d; font-size: 10px; line-height: 1.8; letter-spacing: .04em; }
+.intro-copy { padding: clamp(36px, 5vw, 70px); position: relative; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+.intro-copy::before { content: "“"; position: absolute; right: 30px; top: -20px; color: #e0e7df; font: 150px/1 Georgia, serif; }
+.intro-copy > span { color: var(--green-dark); position: relative; z-index: 1; }
+.intro-copy p { max-width: 920px; margin: 25px 0 0; position: relative; z-index: 1; color: #33423d; font-size: clamp(14px, 1.25vw, 17px); line-height: 2.12; }
+
 @media (max-width: 1120px) {
   .topbar { grid-template-columns: 1fr auto; }
   .topbar nav { display: none; }
@@ -214,6 +226,10 @@ footer a { color: var(--green); }
   .section { padding: 78px 20px; }
   .section-heading { grid-template-columns: 1fr; gap: 14px; margin-bottom: 38px; }
   .section-heading h2 { font-size: 38px; }
+  .intro-card { grid-template-columns: 1fr; }
+  .intro-meta { min-height: 210px; }
+  .intro-copy { padding: 36px 24px; }
+  .intro-copy p { font-size: 14px; line-height: 2; }
   .profile-grid { grid-template-columns: 1fr; }
   .profile-grid article { min-height: 270px; }
   .timeline-item { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
@@ -239,7 +255,7 @@ footer a { color: var(--green); }
   .topbar nav, .download-link, .hero-actions { display: none; }
   .hero { min-height: 720px; }
   .section, .project-inner { max-width: none; }
-  .profile-grid, .timeline-item, .architecture, .method-grid, .skills-grid { break-inside: avoid; }
+  .intro-card, .profile-grid, .timeline-item, .architecture, .method-grid, .skills-grid { break-inside: avoid; }
 }
 </style>
 </head>
@@ -247,7 +263,7 @@ footer a { color: var(--green); }
 <main>
   <header class="topbar">
     <a class="brand" href="#top"><span class="brand-mark">RJ</span><span>冉建飞<small>ELECTRICAL AUTOMATION</small></span></a>
-    <nav><a href="#profile">个人概览</a><a href="#experience">现场经历</a><a href="#project">项目展示</a><a href="#skills">工程技能</a></nav>
+    <nav><a href="#intro">自我介绍</a><a href="#experience">现场经历</a><a href="#project">项目展示</a><a href="#skills">工程技能</a></nav>
     <span class="download-link">公开展示 <span>✓</span></span>
   </header>
   <section class="hero" id="top">
@@ -266,8 +282,26 @@ footer a { color: var(--green); }
       <p class="system-note">硬件、软件与现场结果保持一致，是我持续构建的工程能力。</p>
     </aside>
   </section>
+
+  <section class="section intro-section" id="intro">
+    <div class="section-heading">
+      <p class="section-index">01 / INTRODUCTION</p>
+      <div><h2>自我介绍</h2><p>从个人经历、现场实践到希望发展的完整电气工程方向。</p></div>
+    </div>
+    <div class="intro-card">
+      <aside class="intro-meta">
+        <span>SELF INTRODUCTION</span>
+        <strong>冉建飞</strong>
+        <p>智能制造工程<br>PLC · ROBOTICS · FIELD</p>
+      </aside>
+      <article class="intro-copy">
+        <span>PERSONAL STATEMENT</span>
+        <p>您好，我叫冉建飞，本科就读于上海第二工业大学智能制造工程专业，目前在上海先惠从事 PLC 相关工作。我的工作重心是西门子 TIA Portal 和 S7-1500，参与过墨西哥奥迪、天津大众项目中的节能逻辑、手动控制、传感器调用，也做过根据电气图纸进行硬件组态、网络拓扑核对、现场 I/O 点位核对和联调排故。此前我在节卡做过机器人硬件测试，在校也参加过越疆机械臂与视觉分拣项目，所以我对设备从硬件、控制到动作结果的整条链路比较感兴趣。这个岗位同时覆盖前期电气设计和后期 PLC、HMI 调试，和我希望发展的方向非常一致。EPLAN 我大学学过，目前主要能看图、按图核对和做基础组态，还没有独立完成整套图纸；但我正在利用业余时间用 Factory I/O 复刻现场输送线，并尝试用 UDT、FB、FC 做结构化封装。我希望在真实项目中把硬件设计短板尽快补上，成长为能够从设计一直负责到现场交付的电气工程师。</p>
+      </article>
+    </div>
+  </section>
   <section class="section profile-section" id="profile">
-    <div class="section-heading"><p class="section-index">01 / PROFILE</p><div><h2>从现场出发，理解整台设备</h2><p>智能制造工程背景，将 PLC 控制、机器人、视觉、机械与现场调试连接在同一条工程链路中。</p></div></div>
+    <div class="section-heading"><p class="section-index">02 / PROFILE</p><div><h2>从现场出发，理解整台设备</h2><p>智能制造工程背景，将 PLC 控制、机器人、视觉、机械与现场调试连接在同一条工程链路中。</p></div></div>
     <div class="profile-grid">
       <article class="profile-main"><p class="card-label">CURRENT FOCUS</p><h3>电气自动化与设备控制</h3><p>当前从事 PLC 相关工作，参与汽车产线控制程序、硬件组态、I/O 核对和现场联调。同时通过 Factory I/O 复刻典型输送机构，验证结构化编程与模块复用思路。</p><div class="focus-tags"><span>PLC / HMI</span><span>Electrical</span><span>Commissioning</span><span>Robotics</span></div></article>
       <article><span class="metric">01</span><p class="card-label">EDUCATION</p><h3>上海第二工业大学</h3><p>智能制造工程 · 本科<br>2022.09 — 2026.06</p></article>
@@ -276,7 +310,7 @@ footer a { color: var(--green); }
     </div>
   </section>
   <section class="section experience-section" id="experience">
-    <div class="section-heading"><p class="section-index">02 / EXPERIENCE</p><div><h2>现场经历与工程实践</h2><p>从汽车产线 PLC 到协作机器人测试，再到视觉分拣与机器人集成，持续积累设备全链路视角。</p></div></div>
+    <div class="section-heading"><p class="section-index">03 / EXPERIENCE</p><div><h2>现场经历与工程实践</h2><p>从汽车产线 PLC 到协作机器人测试，再到视觉分拣与机器人集成，持续积累设备全链路视角。</p></div></div>
     <div class="timeline">
   <article class="timeline-item">
     <div class="timeline-time"><span>01</span><p>2026.02 — 至今</p></div>
@@ -300,7 +334,7 @@ footer a { color: var(--green); }
   </article></div>
   </section>
   <section class="project-section" id="project"><div class="section project-inner">
-    <div class="section-heading light"><p class="section-index">03 / FEATURED PROJECT</p><div><h2>输送线与转台控制仿真</h2><p>以汽车产线典型输送机构为原型，在 TIA Portal 与 Factory I/O 中搭建可复用、可监控的控制结构。</p></div></div>
+    <div class="section-heading light"><p class="section-index">04 / FEATURED PROJECT</p><div><h2>输送线与转台控制仿真</h2><p>以汽车产线典型输送机构为原型，在 TIA Portal 与 Factory I/O 中搭建可复用、可监控的控制结构。</p></div></div>
     <div class="project-summary"><div><p class="project-overline">PERSONAL ENGINEERING PRACTICE</p><h3>不只让机构动作，也让程序结构清晰</h3></div><p>场景包含直线输送带、弯道输送带与转台。控制程序将物理 I/O、设备接口和机构逻辑分层组织，使相似设备可以复用同一类功能块，并为后续扩展、监控与故障定位保留清晰路径。</p></div>
     <div class="architecture">
   <div class="arch-item"><span>01</span><small>现场信号</small><strong>Factory I/O 传感器</strong><i>→</i></div>
@@ -318,12 +352,12 @@ footer a { color: var(--green); }
     <div class="project-stats"><div><small>SCENE</small><strong>输送带 · 弯道 · 转台</strong></div><div><small>SIGNALS</small><strong>光电 · 限位 · 模式 · 急停</strong></div><div><small>STRUCTURE</small><strong>UDT · FB · FC · 实例 DB</strong></div></div>
     <div class="gallery"><figure class="gallery-scene"><img src="assets/factory-scene.webp" alt="Factory I/O 输送线和转台仿真场景"><figcaption><span>01</span> Factory I/O 场景搭建</figcaption></figure><figure class="gallery-tree"><img src="assets/tia-project-tree.webp" alt="TIA Portal 项目结构与功能块"><figcaption><span>02</span> TIA Portal 程序块结构</figcaption></figure><figure class="gallery-map"><img src="assets/factory-io-map.webp" alt="Factory I/O 与 S7-PLCSIM 信号映射"><figcaption><span>03</span> Factory I/O 信号映射</figcaption></figure></div>
   </div></section>
-  <section class="section skills-section" id="skills"><div class="section-heading"><p class="section-index">04 / CAPABILITIES</p><div><h2>工程技能矩阵</h2><p>围绕控制系统、现场调试、机器人集成与工程工具形成的能力组合。</p></div></div><div class="skills-grid">
+  <section class="section skills-section" id="skills"><div class="section-heading"><p class="section-index">05 / CAPABILITIES</p><div><h2>工程技能矩阵</h2><p>围绕控制系统、现场调试、机器人集成与工程工具形成的能力组合。</p></div></div><div class="skills-grid">
   <article><span>01</span><h3>PLC 与控制</h3><ul><li>Siemens TIA Portal</li><li>S7-1500</li><li>LAD / SCL / GRAPH</li><li>UDT / FB / FC</li><li>I/O 映射与顺控</li><li>HMI 基础</li></ul></article>
   <article><span>02</span><h3>电气与现场</h3><ul><li>电气图纸阅读</li><li>PLC 硬件组态</li><li>I/O 点位核对</li><li>Profinet 网络拓扑</li><li>联调与故障定位</li><li>EPLAN 基础</li></ul></article>
   <article><span>03</span><h3>机器人与集成</h3><ul><li>FANUC / Dobot / JAKA</li><li>TCP 通信</li><li>海康视觉</li><li>N 点标定</li><li>多轴协同</li><li>机器人测试</li></ul></article>
   <article><span>04</span><h3>工程工具</h3><ul><li>Factory I/O</li><li>AutoCAD</li><li>UG / SolidWorks</li><li>Python</li><li>Office</li><li>CET-6 / C1</li></ul></article></div></section>
-  <section class="closing"><div class="closing-inner"><p class="section-index">05 / DIRECTION</p><div><h2>把硬件、程序与现场交付<br>连接成完整能力</h2><p>希望参与电气图纸、元件选型、PLC / HMI、安装调试与项目交付的完整过程，在真实设备中持续沉淀标准化、模块化和可维护的工程方法。</p></div><div class="closing-mark">RJ</div></div></section>
+  <section class="closing"><div class="closing-inner"><p class="section-index">06 / DIRECTION</p><div><h2>把硬件、程序与现场交付<br>连接成完整能力</h2><p>希望参与电气图纸、元件选型、PLC / HMI、安装调试与项目交付的完整过程，在真实设备中持续沉淀标准化、模块化和可维护的工程方法。</p></div><div class="closing-mark">RJ</div></div></section>
   <footer><p>冉建飞 · 电气自动化项目展示</p><div><span>Shanghai · 2026</span><a href="#top">返回顶部 ↑</a></div></footer>
 </main>
 </body>
