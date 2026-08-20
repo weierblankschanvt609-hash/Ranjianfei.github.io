@@ -157,6 +157,14 @@ img { max-width: 100%; }
 .project-stats div:last-child { border-right: 0; }
 .project-stats small { display: block; color: #687d75; font: 700 8px/1 Arial, sans-serif; letter-spacing: .12em; }
 .project-stats strong { display: block; margin-top: 10px; color: #c8d5d0; font-size: 11px; }
+.video-showcase { margin-top: 22px; display: grid; grid-template-columns: minmax(290px, .55fr) minmax(0, 1.45fr); border: 1px solid rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .025); }
+.video-copy { padding: clamp(30px, 4vw, 54px); display: flex; flex-direction: column; justify-content: center; }
+.video-copy h3 { margin: 22px 0 18px; font-size: clamp(24px, 2.8vw, 38px); line-height: 1.25; letter-spacing: -.035em; }
+.video-copy > p:not(.project-overline) { margin: 0; color: #93a8b6; font-size: 12px; line-height: 1.95; }
+.video-facts { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px; }
+.video-facts span { padding: 8px 10px; color: #b8d3e4; border: 1px solid rgba(255, 255, 255, .14); font: 700 9px/1 Arial, sans-serif; letter-spacing: .06em; }
+.video-frame { min-width: 0; display: grid; place-items: center; background: #07131d; border-left: 1px solid rgba(255, 255, 255, .14); }
+.video-frame video { width: 100%; aspect-ratio: 16 / 9; display: block; object-fit: contain; background: #07131d; }
 .gallery { margin-top: 60px; display: grid; grid-template-columns: 1.2fr .8fr; grid-template-rows: 1fr 1fr; gap: 16px; }
 .gallery figure { margin: 0; min-width: 0; position: relative; overflow: hidden; background: #081217; }
 .gallery-scene { grid-row: 1 / 3; min-height: 700px; }
@@ -252,6 +260,9 @@ footer a { color: var(--green); }
   .project-stats { grid-template-columns: 1fr; }
   .project-stats div { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .12); }
   .project-stats div:last-child { border-bottom: 0; }
+  .video-showcase { grid-template-columns: 1fr; }
+  .video-copy { padding: 32px 24px; }
+  .video-frame { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .14); }
   .gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
   .gallery-scene { grid-row: auto; min-height: 360px; }
   .gallery-tree, .gallery-map { min-height: 300px; }
@@ -367,6 +378,10 @@ footer a { color: var(--green); }
   <article><span>MAP</span><h4>集中管理 I/O</h4><p>把物理地址集中映射到设备接口，减少机构逻辑对现场地址的直接依赖。</p></article>
   <article><span>DIAG</span><h4>分层监控诊断</h4><p>沿映射层、接口层、设备层逐级监控，快速缩小现场问题范围。</p></article></div>
     <div class="project-stats"><div><small>SCENE</small><strong>输送带 · 弯道 · 转台</strong></div><div><small>SIGNALS</small><strong>光电 · 限位 · 模式 · 急停</strong></div><div><small>STRUCTURE</small><strong>UDT · FB · FC · 实例 DB</strong></div></div>
+    <div class="video-showcase">
+      <div class="video-copy"><p class="project-overline">COMMISSIONING DEMO · CURRENT VERSION</p><h3>Factory I/O 阶段性联调演示</h3><p>视频记录了仿真场景运行、TIA Portal 设备块调用与 GRAPH 顺序控制监控。当前版本已经完成输送带、转台与主要控制逻辑的核心联动，并可基本运行；后续继续完善边界条件、异常处理与整体稳定性验证。</p><div class="video-facts"><span>00:37</span><span>H.264 · 720P</span><span>FACTORY I/O × S7-PLCSIM</span></div></div>
+      <div class="video-frame"><video controls preload="metadata" playsinline poster="assets/factory-io-commissioning-poster.webp" aria-label="Factory I/O 输送线与转台阶段性联调演示"><source src="assets/factory-io-commissioning-demo.mp4" type="video/mp4">当前浏览器不支持视频播放。</video></div>
+    </div>
     <div class="gallery"><figure class="gallery-scene"><img src="assets/factory-scene.webp" alt="Factory I/O 输送线和转台仿真场景"><figcaption><span>01</span> Factory I/O 场景搭建</figcaption></figure><figure class="gallery-tree"><img src="assets/tia-project-tree.webp" alt="TIA Portal 项目结构与功能块"><figcaption><span>02</span> TIA Portal 程序块结构</figcaption></figure><figure class="gallery-map"><img src="assets/factory-io-map.webp" alt="Factory I/O 与 S7-PLCSIM 信号映射"><figcaption><span>03</span> Factory I/O 信号映射</figcaption></figure></div>
   </div></section>
   <section class="section skills-section" id="skills"><div class="section-heading"><p class="section-index">05 / CAPABILITIES</p><div><h2>面向现场交付的工程能力</h2><p>围绕控制系统、现场调试、机器人集成、工程沟通和长期驻场形成的能力组合。</p></div></div><div class="skills-grid">
